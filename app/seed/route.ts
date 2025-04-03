@@ -1,20 +1,20 @@
 import bcrypt from 'bcryptjs';
 import postgres from 'postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
-// import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 
 
-// // Supabase 클라이언트 설정
-// const supabase = createClient(
-//   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-//   process.env.SUPABASE_SERVICE_ROLE_KEY!,
-//   {
-//     auth: {
-//       autoRefreshToken: false,
-//       persistSession: false
-//     }
-//   }
-// );
+// Supabase 클라이언트 설정
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false
+    }
+  }
+);
 
 // Postgres 연결 설정
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require', prepare: false });
