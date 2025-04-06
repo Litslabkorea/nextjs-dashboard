@@ -10,7 +10,7 @@ import { signOut } from '@/auth';
 // 3. 하단에 로그아웃 버튼
 // 모바일/데스크톱 반응형 디자인 적용
 
-export function SideNav() {
+export default function SideNav() {
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
       <Link
@@ -41,7 +41,7 @@ export function SideNav() {
 }
 
 // SideNav2는 SideNav와 동일한 구조를 가지지만 다른 스타일을 적용합니다
-export default function SideNav2() {
+export function SideNav2() {
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
       <Link
